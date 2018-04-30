@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liga de Futbol</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Boostrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Nuestro CSS -->
+    <link rel="stylesheet" id="estiloPagina" href="#">
+    <link rel="shortcout icon" type="image/x-icon" href="https://uns-iaw-2018-com16.github.io/TorneoFutbol/Imagenes/Favicon/logo.ico">
+	<!-- JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap JS-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Nuestro JS -->
+	<script src="https://uns-iaw-2018-com16.github.io/TorneoFutbol/JavaScript/cargarFixture.js"></script>
+    <script src="https://uns-iaw-2018-com16.github.io/TorneoFutbol/JavaScript/cambiarEstilo.js"></script>
+
+  </head>
+  <body>
+  	<div class="container">
+  		<!-- Encabezado -->
+		<div class="header">
+			<img id="titulo" src="#">
+			<button class ="btn btn-default" onclick="cambiarEstilo('estiloGeneral.css')">Modo Normal</button>
+			<button class ="btn btn-default" onclick="cambiarEstilo('estiloOscuro.css')">Modo Oscuro</button>
+		</div>
+
+  		<!-- Barra de navegacion -->
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="https://uns-iaw-2018-com16.github.io/TorneoFutbol/HTML/index.html">Fixture</a>
+			</li>
+			<li>
+				<a href="https://uns-iaw-2018-com16.github.io/TorneoFutbol/HTML/resultados.html">Resultados</a>
+			</li>
+			<li>
+				<a href="https://uns-iaw-2018-com16.github.io/TorneoFutbol/HTML/equipos.html">Equipos</a>
+			</li>
+			<li role="presentation" class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tablas<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="https://uns-iaw-2018-com16.github.io/TorneoFutbol/HTML/posiciones.html">Posiciones</a></li>
+					<li><a href="https://uns-iaw-2018-com16.github.io/TorneoFutbol/HTML/goleadores.html">Goleadores</a></li>
+					<li><a href="https://uns-iaw-2018-com16.github.io/TorneoFutbol/HTML/amarillas.html">Amarillas</a></li>
+				</ul>
+			</li>
+		</ul>
+    	
+    	{% block body %}{% endblock %}
+
+	</div>
+  </body>
+</html>

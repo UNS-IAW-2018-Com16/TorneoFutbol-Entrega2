@@ -1,0 +1,199 @@
+body {
+	background:url("https://uns-iaw-2018-com16.github.io/TorneoFutbol/Imagenes/Fondos/EstiloOscuro/fondo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.header{
+    margin:10px;
+}
+
+#titulo {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header button.btn{
+    margin-top: 10px;
+    position:relative;
+    left: 80%;
+	background-color: black;
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+} 
+
+ul.nav {
+	background-color: white;
+    border: solid 5px black;
+}
+
+.nav > li > a {
+	color:black;
+	font-size: 20px;
+}
+
+.nav > li > a:hover {
+	background-color: black;
+    color: white;
+	border-color: black;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.nav-tabs > li.active > a {
+	color:white;
+    border: 2px solid rgb(255 0 0);
+	background-color: black;
+}
+.nav-tabs > li.active > a:hover {
+	color:white;
+    border: 2px solid rgb(255 0 0);
+	background-color: black;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	background-color: black;
+    color: white;
+	border-color: black;
+	border-radius: 4px 4px 4px 4px;
+}
+
+h2 {
+    background-color: black;
+    text-align: center;
+	color: white;
+	font-size: 50px;
+}
+
+.panel {
+    background: none;
+}
+
+.panel-info > .panel-heading {
+	border: 2px solid black;
+	border-radius: 4px 4px 0 0;
+    background-color: black;
+	text-align: center;
+	color: white;
+	font-size: 30px;
+}
+
+.panel-info > .panel-body {
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+/* Fixture */
+
+.partidoFechaFixture{
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+}
+.dateFechaFixture, .timeFechaFixture, .canchaFechaFixture, .arbitroFechaFixture{
+    font-size: 15px;
+    margin: 10px;   
+    display:inline-block;
+}
+
+.icono{
+    width: 20px;
+    margin:3px;
+}
+
+/* Resultado */
+
+.equipoResultado, .resultadoPartido{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.golesLocalResultado, .golesVisitaResultado{
+    margin-top: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 2px solid black;
+    background: red;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.equipoResultado{
+    background-color: black;
+    color:white;
+    margin: 15px;
+    font-size: 15px;
+}
+
+/* Equipos */
+
+#filtroEquipos{
+    margin: 10px;
+    position:relative;
+    left:90%;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.media-left img{
+    width:100px;
+    height: 100px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.media-heading{
+    color:white;
+    text-align: center;
+    border-bottom: solid 2px white;
+    padding-top:3px;
+    padding-bottom:5px;
+}
+
+.media-body{
+    color: white;
+    background-color: black;
+    padding: 15px;
+}
+
+#nombreEquipo, #logoResultados, #logoFixture, #logoPosiciones, #logoGoleadores, #logoAmarillas{
+    margin:10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tablas */
+
+#tablaAmarillas, #tablaPosiciones, #tablaGoleadores{
+    background-color: black;
+    color:white;
+}
+
+tr th{
+    text-align: center;
+    font-size: 15px;
+}
+
+tr td{
+    text-align: center;
+}
+
+table > tbody > tr:hover{
+    background-color: lightgray;
+    color:black;
+}
+
+.tituloTabla{
+    border: solid 5px white;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+
+
