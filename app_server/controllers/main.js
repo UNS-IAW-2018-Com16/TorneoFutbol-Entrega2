@@ -1,15 +1,19 @@
 const mongoose = require('mongoose');
-const fixture = mongoose.model('Fixture');
+require('../models/db');
+require('../models/fechas');
+const fechas = mongoose.model('Fecha');
 
 /* GET home page. */
 const index = function (req, res) { 
-  fixture.find().exec((err, fixture) => {
+  fechas.find().exec((err, fechas) => {
       if (err) { 
         res.render('error', { error : err });    
       } else {
         res.render('index', {
-          title: 'Fixture'
+          title: 'Fixture',
+          fechas: fechas
         });
+        console.log(fechas);
       }
     })
 };

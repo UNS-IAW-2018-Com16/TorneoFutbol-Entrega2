@@ -4,15 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-console.log("antes de fixture");
-require('./app_server/models/fixtures');
-require('./app_server/models/db');
-console.log("despues de fixture");
-
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
-console.log("despues de routes");
-
+var resultadosRouter = require('./app_server/routes/resultados');
+var posicionesRouter = require('./app_server/routes/posiciones');
+var amarillasRouter = require('./app_server/routes/amarillas');
+var goleadoresRouter = require('./app_server/routes/goleadores');
 
 var app = express();
 
@@ -28,6 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/resultados', resultadosRouter);
+app.use('/posiciones', posicionesRouter);
+app.use('/amarillas', amarillasRouter);
+app.use('/goleadores', goleadoresRouter);
 
 
 // catch 404 and forward to error handler

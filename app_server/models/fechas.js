@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const fixtureSchema = new mongoose.Schema({
+const partidoSchema = new mongoose.Schema({
   cancha: {
     type: String,
     required: true
@@ -28,5 +28,9 @@ const fixtureSchema = new mongoose.Schema({
   golesLocal: Number,
   golesVisita: Number
 });
-console.log("cree el schema");
-mongoose.model('Fixture', fixtureSchema);
+
+const fechaSchema = new mongoose.Schema({
+  partidos: [partidoSchema]
+} , {collection: "fechas"});
+
+mongoose.model('Fecha', fechaSchema);

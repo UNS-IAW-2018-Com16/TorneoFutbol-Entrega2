@@ -1,7 +1,38 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <h1>{{title}}</h1>
-  
-  <p>Welcome to {{title}}</p>
+  	<div>
+  		<img id="logoFixture" src="../images/Titulos/fixture.png" alt="Imagen No Disponible">
+		<div class="panel" id="fixture">
+			{% for fecha in fechas %}
+				<div class="panel panel-info fixture">
+					<div class="panel-heading">
+						<p> Fecha {{ loop.index }} </p>
+					</div>
+					<div class="panel-body">
+					{% for partido in fecha.partidos %}
+						<p>
+							<div class ="partidoFechaFixture">
+								{{ partido.equipoLocal }} - {{partido.equipoVisitante}}
+							</div>
+							<div class='dateFechaFixture'>
+								<img src='../images/Iconos/date.png' alt='Fecha del partido' class='icono'> {{ partido.fecha }}
+							</div>
+							<div class='timeFechaFixture'>
+								<img src='../images/Iconos/time.png' alt='Hora del partido' class='icono'> {{ partido.hora }}
+							</div>
+							<div class='canchaFechaFixture'>
+								<img src='../images/Iconos/cancha.png' alt='Cancha del partido' class='icono'> {{ partido.cancha }}
+							</div>
+							<div class='arbitroFechaFixture'>
+								<img src='../images/Iconos/arbitro.png' alt='Arbitro del partido' class='icono'> {{ partido.arbitro }}
+							</div>
+						</p>
+					{% endfor %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
 {% endblock %}

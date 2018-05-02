@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<div>
+		<img id="logoAmarillas" src="../images/Titulos/amarillas.png" alt="Amarillas">
+		<table class="table table-hover table-bordered" id="tablaAmarillas">
+			<tr>
+				<th>Jugador</th>
+				<th>Equipo</th>
+				<th>Amarillas</th>
+			</tr>
+			{% for jugador in tAmarillas %}
+				<tr>
+					<td>{{ jugador.jugador }}</td>
+					<td>{{ jugador.equipo }}</td>
+					<td>{{ jugador.amarillas }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

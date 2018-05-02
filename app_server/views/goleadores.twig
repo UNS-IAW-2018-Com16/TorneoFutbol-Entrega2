@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<div>
+		<img id="logoGoleadores" src="../images/Titulos/goleadores.png" alt="logoGoleadores">
+		<table class="table table-hover table-bordered" id="tablaGoleadores">
+			<tr>
+				<th>Jugador</th>
+				<th>Equipo</th>
+				<th>Goles</th>
+			</tr>
+			{% for jugador in tGoleadores %}
+				<tr>
+					<td>{{ jugador.jugador }}</td>
+					<td>{{ jugador.equipo }}</td>
+					<td>{{ jugador.goles }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

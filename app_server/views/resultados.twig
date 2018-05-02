@@ -1,0 +1,38 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<div>
+		<img id="logoResultados" src="../images/Titulos/resultados.png" alt="Resultados">
+		<div class="panel" id="resultados">
+			{% for fecha in fechas %}
+				<div class="panel panel-info fixture">
+					<div class="panel-heading">
+						<p> Fecha {{ loop.index }} </p>
+					</div>
+					<div class="panel-body">
+					{% for partido in fecha.partidos %}
+						{% if partido.golesLocal != null %}
+							<p>
+								<div class = "equipoResultado col-md-4">
+									{{ partido.equipoLocal }}
+								</div>
+								<div class = "resultadoPartido">
+									<div class = "golesLocalResultado col-md-1">
+										{{ partido.golesLocal }}
+									</div>
+									<div class = "golesVisitaResultado col-md-1">
+										{{ partido.golesVisita }}
+									</div>
+								</div>
+								<div class = "equipoResultado col-md-4">
+									{{ partido.equipoVisitante }}
+								</div>
+							</p>
+						{% endif %}
+					{% endfor %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
