@@ -1,0 +1,77 @@
+{% extends 'layout.twig' %}
+
+{% block nav %}
+	<li>
+		<a href="../administrador">Administrador</a>
+	</li>
+{% endblock %}
+
+{% block body %}
+	<div>
+		<h2> Administrador </h2>
+		<div class = "panel panel-info">
+			<div class = "panel-heading">
+				Jugadores
+			</div>
+			<div class = "panel-body">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Cargar Jugador</button>
+				<br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Modificar Jugador</button>
+				<br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Eliminar Jugador</button>
+			</div>
+		</div>
+		<div class = "panel panel-info">
+			<div class = "panel-heading">
+				Equipos
+			</div>
+			<div class = "panel-body">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Cargar Equipo</button>
+				<br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Modificar Equipo</button>
+				<br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Eliminar Equipo</button>
+			</div>
+		</div>
+		<div class = "panel panel-info">
+			<div class = "panel-heading">
+				Fixture
+			</div>
+			<div class = "panel-body">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Cargar Partido</button>
+				<br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Modificar Partido</button>
+				<br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Eliminar Partido</button>
+				<br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Generar Fixture Completo</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="formulario" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title" id="ModalCenterTitle">Modificar Informacion</h3>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+		        	<label>Equipo Local:</label>
+		        	<input type="text" placeholder="Goles Local" name="golesLocal">
+		        	<br>
+		        	<label>Equipo Visitante:</label>
+      				<input type="text" placeholder="Goles Visita" name="golesVisita">   
+      				<br>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		        <button type="button" class="btn btn-primary">Guardar</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+{% endblock %}

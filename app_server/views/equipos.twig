@@ -6,7 +6,11 @@
     <div class="dropdown" id="filtroEquipos">
 	    <button class="btn btn-default dropdown-toggle" type="button" id="botonEquipos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Equipos <span class="caret"></span>
 	    </button>
-	    <ul class="dropdown-menu" id="listaEquipos" aria-labelledby="dropdownMenu1"></ul>
+	    <ul class="dropdown-menu" id="listaEquipos" aria-labelledby="dropdownMenu1">
+	    	{% for equipo in equipos %}
+	    		<li onclick = "cargarPlantel({{ equipo.nombre }})"><a>{{ equipo.nombre }}</a></li>
+	    	{% endfor %}
+	    </ul>
     </div>
 
     <!-- Nombre del Equipo -->

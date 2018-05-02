@@ -10,6 +10,8 @@ var resultadosRouter = require('./app_server/routes/resultados');
 var posicionesRouter = require('./app_server/routes/posiciones');
 var amarillasRouter = require('./app_server/routes/amarillas');
 var goleadoresRouter = require('./app_server/routes/goleadores');
+var editorRouter = require('./app_server/routes/editor');
+var administradorRouter = require('./app_server/routes/administrador');
 
 var app = express();
 
@@ -29,6 +31,8 @@ app.use('/resultados', resultadosRouter);
 app.use('/posiciones', posicionesRouter);
 app.use('/amarillas', amarillasRouter);
 app.use('/goleadores', goleadoresRouter);
+app.use('/editor', editorRouter);
+app.use('/administrador', administradorRouter);
 
 
 // catch 404 and forward to error handler

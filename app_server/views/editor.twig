@@ -1,3 +1,5 @@
+{% extends 'layout.twig' %}
+
 {% block nav %}
 	<li>
 		<a href="../editor">Editor</a>
@@ -7,6 +9,51 @@
 {% block body %}
 	<div>
 		<h2> Editor </h2>
-		
+		{% for fecha in fechas %}
+			<div class="panel panel-info fixture">
+				<div class="panel-heading">
+					<p> Fecha {{ loop.index }} </p>
+				</div>
+				<div class="panel-body">
+					{% for partido in fecha.partidos %}
+						<div class ="partidoFechaFixture">
+							{{ partido.equipoLocal }} - {{partido.equipoVisitante}}
+						</div>
+						{%  if partido.golesLocal == null %}
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Cargar Informacion</button>
+						{% else %}
+							<p> Datos Cargados! </p>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formulario">Modificar Informacion</button>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<div class="modal fade" id="formulario" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h3 class="modal-title" id="ModalCenterTitle">Modificar Informacion</h3>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+		        	<label>Equipo Local:</label>
+		        	<input type="text" placeholder="Goles Local" name="golesLocal">
+		        	<br>
+		        	<label>Equipo Visitante:</label>
+      				<input type="text" placeholder="Goles Visita" name="golesVisita">   
+      				<br>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		        <button type="button" class="btn btn-primary">Guardar</button>
+		      </div>
+		    </div>
+		  </div>
 	</div>
 {% endblock %}
