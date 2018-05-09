@@ -15,13 +15,13 @@ function cambiarEstilo(estilo){
 }
     
 function setReferencia(estilo){
-    var rutaAbsoluta = "stylesheet/"+estilo;
+    var rutaAbsoluta = "stylesheets/"+estilo;
     $("link[id=\"estiloPagina\"]").attr("href",rutaAbsoluta);
 }
 
 function cambiarTitulo(estilo){
     if(estilo==="estiloGeneral.css")
-        $("img[id=\"titulo\"]").attr("src","images/Fondos/EstiloGeneral/banner.png");
+        $("img[id=\"titulo\"]").attr("src","../images/Fondos/EstiloGeneral/banner.png");
     else
-        $("img[id=\"titulo\"]").attr("src","images/Fondos/EstiloOscuro/banner.png");
+        $("img[id=\"titulo\"]").attr("src","../images/Fondos/EstiloOscuro/banner.png");
 }

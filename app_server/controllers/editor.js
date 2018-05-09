@@ -9,11 +9,11 @@ const editor = function (req, res) {
         res.render('error', { error : err });    
       } else {
         res.render('editor', {
-          title: 'Editor',
           fechas: fechas
         });
       }
     })
 };
+
 
 module.exports = { editor }

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const partidoSchema = new mongoose.Schema({
+  ID:{ 
+    type: String,
+    required: true
+  },
   cancha: {
     type: String,
     required: true

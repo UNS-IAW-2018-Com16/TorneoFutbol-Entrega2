@@ -7,18 +7,48 @@
 	    <button class="btn btn-default dropdown-toggle" type="button" id="botonEquipos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Equipos <span class="caret"></span>
 	    </button>
 	    <ul class="dropdown-menu" id="listaEquipos" aria-labelledby="dropdownMenu1">
-	    	{% for equipo in equipos %}
-	    		<li onclick = "cargarPlantel({{ equipo.nombre }})"><a>{{ equipo.nombre }}</a></li>
+	    	{% for plantel in planteles %}
+	    		<li><a>{{ plantel._id.nombre }}</a></li>
 	    	{% endfor %}
 	    </ul>
     </div>
 
-    <!-- Nombre del Equipo -->
-    <div>
-       <img id="nombreEquipo" src="#">
-    </div>
-
-    <!-- Informacion Jugadores -->
-    <div class="media" id="plantel"></div>
+    {% for plantel in planteles %}
+        <!-- Nombre del Equipo -->
+        <div>
+           <img id="nombreEquipo" src="./images/Titulos/{{plantel._id.nombre}}.png">
+        </div>
+        {% for jugador in plantel.jugadores %}
+            <!-- Informacion Jugadores -->
+            <div class="media" id="plantel">
+                <div class="media-left media-middle">
+                    <a>
+                        <img class="media-object" src="./images/{{plantel._id.nombre}}/Plantel/{{jugador.foto}}" alt ="Imagen No Disponible">
+                    </a>
+                </div>
+                <div class = "media-body">
+                    <h4 class="media-heading">
+                        {{ jugador.apellido }}, {{ jugador.nombre }}
+                    </h4>
+                    <p>
+                        Fecha de Nacimiento: {{ jugador.fechaNacimiento }}
+                        <br>
+                        Edad: {{ jugador.edad }}
+                        <br>
+                        Altura: {{ jugador.altura }}
+                        <br>
+                        Peso: {{ jugador.peso }}
+                        <br>
+                        Camiseta: {{ jugador.numeroCamiseta }}
+                        <br>
+                        Pie Habil: {{ jugador.pieHabil }}
+                        <br>
+                        Posicion: {{ jugador.posicion }}
+                    </p>
+                </div>
+                <br>
+            </div>
+        {% endfor %}
+    {% endfor %}
 
 {% endblock %}

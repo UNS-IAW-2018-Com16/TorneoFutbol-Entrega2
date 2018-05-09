@@ -8,16 +8,16 @@
 	<!-- Boostrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Nuestro CSS -->
-    <link rel="stylesheet" id="estiloPagina" href="stylesheets/estiloGeneral.css"> 
+    <link rel="stylesheet" id="estiloPagina" href="#">
     <link rel="shortcout icon" type="image/x-icon" href="images/Favicon/logo.ico">
 	<!-- JQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Bootstrap JS-->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Nuestro JS 
-	<script src="https://uns-iaw-2018-com16.github.io/TorneoFutbol-Entrega1/JavaScript/cargarFixture.js"></script> 
-    <script src="javascripts/cambiarEstilo.js"></script> -->
-
+	<!-- Nuestro JS -->
+    <script src="javascripts/cambiarEstilo.js"></script>
+    <script src="javascripts/facebook.js"></script>
+    <script src="javascripts/guardarInformacion.js"></script>
   </head>
   <body>
   	<div class="container">
@@ -27,10 +27,15 @@
 			<button class ="btn btn-default" onclick="cambiarEstilo('estiloGeneral.css')">Modo Normal</button>
 			<button class ="btn btn-default" onclick="cambiarEstilo('estiloOscuro.css')">Modo Oscuro</button>
 		</div>
+		
+		<!-- Boton Login Facebook -->
+		<button id="login" onclick="login()">Iniciar Sesión Facebook</button>
+		<!-- Boton Cerrar Sesion Facebook  -->
+		<button id="logout" onclick="logout()">Salir</button>
 
   		<!-- Barra de navegacion -->
 		<ul class="nav nav-tabs">
-			<li class="active">
+			<li>
 				<a href="../">Fixture</a>
 			</li>
 			<li>
@@ -47,7 +52,10 @@
 					<li><a href="../amarillas">Amarillas</a></li>
 				</ul>
 			</li>
-			{% block nav %} {% endblock %}
+
+			<li>
+				<a href="../editor">Editor</a>
+			</li>
 		</ul>
 
     	{% block body %}{% endblock %}

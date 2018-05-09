@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('../models/db');
 require('../models/fechas');
 const fechas = mongoose.model('Fecha');
 
@@ -10,10 +9,9 @@ const index = function (req, res) {
         res.render('error', { error : err });    
       } else {
         res.render('index', {
-          title: 'Fixture',
-          fechas: fechas
+          fechas: fechas,
+          esEditor: req.user
         });
-        console.log(fechas);
       }
     })
 };

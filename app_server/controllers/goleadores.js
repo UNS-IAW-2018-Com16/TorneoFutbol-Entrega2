@@ -9,7 +9,6 @@ const goleadores = function (req, res) {
         res.render('error', { error : err });    
       } else {
         res.render('goleadores', {
-          title: 'Goleadores',
           tGoleadores: goleadores
         });
       }

@@ -9,7 +9,6 @@ const posiciones = function (req, res) {
         res.render('error', { error : err });    
       } else {
         res.render('posiciones', {
-          title: 'Posiciones',
           tPosiciones: posiciones
         });
       }

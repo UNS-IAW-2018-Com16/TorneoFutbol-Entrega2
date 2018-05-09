@@ -9,7 +9,6 @@ const amarillas = function (req, res) {
         res.render('error', { error : err });    
       } else {
         res.render('amarillas', {
-          title: 'Amarillas',
           tAmarillas: amarillas
         });
       }
