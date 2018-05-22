@@ -10,7 +10,8 @@ const planteles = function (req, res) {
         res.render('error', { error : err });    
       } else {
         res.render('equipos', {
-          planteles: planteles
+          planteles: planteles,
+          user: req.user
         });
       }
     })

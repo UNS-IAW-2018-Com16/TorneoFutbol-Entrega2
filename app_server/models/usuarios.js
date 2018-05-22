@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
 const usuarioSchema = new mongoose.Schema({
-  ID: {
+  facebookID: {
+    type: String,
+    required: true
+  },
+  mail: {
     type: String,
     required: true
   },
@@ -9,10 +13,8 @@ const usuarioSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  apellido: {
-    type: String,
-    required: true
-  },
+  estilo: Number,
+  equipoFavorito: [{type:String}],
   esEditor: {
     type: Boolean,
     required: true

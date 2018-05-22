@@ -16,8 +16,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- Nuestro JS -->
     <script src="javascripts/cambiarEstilo.js"></script>
-    <script src="javascripts/facebook.js"></script>
-    <script src="javascripts/guardarInformacion.js"></script>
+    
   </head>
   <body>
   	<div class="container">
@@ -29,9 +28,13 @@
 		</div>
 		
 		<!-- Boton Login Facebook -->
-		<button id="login" onclick="login()">Iniciar Sesión Facebook</button>
+		<a href="/auth/facebook">
+			<button id="btnLogin"><span class="fa fa-facebook"></span>Facebook</button>
+		</a>
 		<!-- Boton Cerrar Sesion Facebook  -->
-		<button id="logout" onclick="logout()">Salir</button>
+		<a href="/auth/logout">
+			<button id="btnSalir">Salir</button>
+		</a>
 
   		<!-- Barra de navegacion -->
 		<ul class="nav nav-tabs">
@@ -52,12 +55,16 @@
 					<li><a href="../amarillas">Amarillas</a></li>
 				</ul>
 			</li>
-
+			<li>
+				<a href="../videos">Videos</a>
+			</li>
+			{% if user.esEditor %}
 			<li>
 				<a href="../editor">Editor</a>
 			</li>
+			{% endif %}
 		</ul>
-
+    
     	{% block body %}{% endblock %}
 
 	</div>

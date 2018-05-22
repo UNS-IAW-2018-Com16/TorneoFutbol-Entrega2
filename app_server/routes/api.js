@@ -1,16 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const usuarioApi = require('../controllers/usuariosApi');
+
 const partidoApi = require('../controllers/partidoApi');
+const favoritosApi = require('../controllers/favoritosApi');
+const estilosApi = require('../controllers/estilosApi');
 
-/*const pedidoApi = require('../controllers/pedidoApi');
-const middleware = require('../auth/middleware');*/
-
-/* GET home page. */
-
-//router.get('/editor', usuarioApi.buscarUsuarios);
+router.get('/guardarEstilo', estilosApi.guardarEstilo);
 router.post('/datosPartido', partidoApi.cargarDatos);
-router.post('/datosUsuario', usuarioApi.agregarUsuario);
-
+router.post('/agregarFavorito', favoritosApi.agregarFavorito);
+router.post('/eliminarFavorito',favoritosApi.eliminarFavorito);
 
 module.exports = router;

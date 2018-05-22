@@ -2,7 +2,7 @@
 
 {% block body %}
 	<div>
-		<h2> {{ titulo }} </h2>
+		<img id="logoEditor" src="./images/Titulos/editor.png">
 		{% for fecha in fechas %}
 			<div class="panel panel-info fixture">
 				<div class="panel-heading">
@@ -13,12 +13,12 @@
 						<div class ="partidoFechaFixture">
 							{{ partido.equipoLocal }} - {{partido.equipoVisitante}}
 						</div>
-						{%  if partido.golesLocal == null %}
+						{%  if partido.golesLocal == "" or partido.golesVisita == "" %}
 							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal"
-							data-target="#formulario" data-id="{{partido.ID}}">Cargar Informacion</button>
+							href="#formulario" data-id="{{partido.ID}}">Cargar Informacion</button>
 						{% else %}
 							<p> Datos Cargados!</p>
-							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal" data-target="#formulario" data-id="{{partido.ID}}">Modificar Informacion</button>
+							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal" href="#formulario" data-id="{{partido.ID}}">Modificar Informacion</button>
 						{% endif %}
 					{% endfor %}
 				</div>
@@ -74,4 +74,24 @@
 		    </div>
 		  </div>
 	</div>
+
+	<div class="modal" id="actualizacion" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Actualización</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>La actualización se realizó correctamente.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+	<script src="javascripts/guardarInformacion.js"></script>
 {% endblock %}

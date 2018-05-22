@@ -29,8 +29,8 @@ const partidoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  golesLocal: Number,
-  golesVisita: Number
+  golesLocal: String,
+  golesVisita: String
 });
 
 const fechaSchema = new mongoose.Schema({

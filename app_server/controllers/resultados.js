@@ -9,7 +9,8 @@ const resultados = function (req, res) {
         res.render('error', { error : err });    
       } else {
         res.render('resultados', {
-          fechas: resultados
+          fechas: resultados,
+          user: req.user
         });
       }
     })

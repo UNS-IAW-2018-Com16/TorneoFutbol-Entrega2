@@ -1,10 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 require('./app_server/models/db');
+var passport = require('passport');
 
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
@@ -16,6 +17,7 @@ var editorRouter = require('./app_server/routes/editor');
 var administradorRouter = require('./app_server/routes/administrador');
 var equiposRouter = require('./app_server/routes/planteles');
 var apiRouter = require('./app_server/routes/api');
+var videosRouter = require('./app_server/routes/videos');
 
 var app = express();
 
@@ -29,6 +31,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+	secret: "123456789",
+	resave: true,
+	saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./app_server/auth/facebook');
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/resultados', resultadosRouter);
@@ -39,6 +52,10 @@ app.use('/goleadores', goleadoresRouter);
 app.use('/editor', editorRouter);
 app.use('/administrador', administradorRouter);
 app.use('/api',apiRouter);
+app.use('/videos', videosRouter);
+
+var authRouter = require('./app_server/routes/auth');
+app.use('/auth', authRouter);
 
 
 // catch 404 and forward to error handler
