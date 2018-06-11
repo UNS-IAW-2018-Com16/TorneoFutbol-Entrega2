@@ -1,7 +1,7 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
-require('../models/usuarios');
+require('../models/modelsTorneo');
 const mongoose = require('mongoose');
 var Usuario = mongoose.model('Usuario');
 
@@ -30,18 +30,24 @@ profileFields: ['id', 'displayName','emails']
 			else {
 			    if(!currentUser) {
 			    	var mail = profile.emails[0].value;
-			    	var editor;
-			    	if (mail == "juuan.olmedo@hotmail.com")
-			    		editor = true;
-			    	else
-			    		editor = false;
-
-					var newUser = new Usuario({
+			    	var newUser = null;
+			    	
+			    	if (mail == "juuan.olmedo@hotmail.com"){
+			    		newUser = new Usuario({
 			            facebookID: profile.id,
 			            mail: profile.emails[0].value,
 			            nombre: profile.displayName,
-			            esEditor : editor
-					});
+			            esEditor : true,
+			            partidosAsignados : []
+						});
+			    	} else {
+			    		newUser = new Usuario({
+			            facebookID: profile.id,
+			            mail: profile.emails[0].value,
+			            nombre: profile.displayName,
+			            esEditor : false
+						});
+			    	}
 
 			        newUser.save(function(err, newUser) {
 			            if(err) return done(err);

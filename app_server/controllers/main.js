@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
-require('../models/fechas');
+require('../models/modelsTorneo');
 const fechas = mongoose.model('Fecha');
+const partido = mongoose.model('Partido');
 
 const index = function (req, res) { 
-  fechas.find().exec((err, fechas) => {
+  fechas.find().populate({ path: 'partidos', populate:[{ path: 'equipoLocal', select: 'nombre'},{path:'equipoVisitante', select: 'nombre'}]}).exec((err, fechas) => {
       if (err) { 
         res.render('error', { error : err });    
       } else {
@@ -14,5 +15,6 @@ const index = function (req, res) {
       }
     })
 };
+
 
 module.exports = { index }

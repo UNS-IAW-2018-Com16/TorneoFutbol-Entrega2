@@ -1,16 +1,15 @@
 const mongoose = require('mongoose');
-require('../models/fechas');
-const Fechas = mongoose.model('Fecha');
+require('../models/modelsTorneo');
+const partidos = mongoose.model('Partido');
 
 const cargarDatos = function (req, res){
 	var IDPartido = req.body.idPartido;
 	var golesLocal = req.body.golesL;
 	var golesVisita = req.body.golesV;
-	var IDFecha = IDPartido.charAt(0);
 
-	Fechas
-		.updateOne({"ID":IDFecha, partidos: {$elemMatch: {"ID":IDPartido}}} , 
-					{$set : {"partidos.$.golesLocal": golesLocal, "partidos.$.golesVisita": golesVisita }})
+	partidos
+		.updateOne({"_id": IDPartido} , 
+					{$set : {"golesLocal": golesLocal, "golesVisita": golesVisita }})
 		.exec((err, partido)=>{
 			if(err)
 				res.status(500).send(err);

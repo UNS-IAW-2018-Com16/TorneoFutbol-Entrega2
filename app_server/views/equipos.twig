@@ -13,30 +13,18 @@
 	    </ul>
     </div>-->
 
-    {% for plantel in planteles %}
+    {% for equipo in equipos %}
         <!-- Nombre del Equipo -->
         <div>
-           <img id="nombreEquipo" src="./images/Titulos/{{plantel._id.nombre}}.png">
-            {% if user %}
-                {% set encontre = false %}
-                {% for equipo in user.equipoFavorito %}
-                    {% if equipo == plantel._id.nombre %}
-                        {% encontre = true %}
-                    {% endif %}
-                {% endfor %}
-                {% if encontre == true %}
-                    <span class="star glyphicon glyphicon-star" data-id="{{plantel._id.nombre}}" aria-hidden="true"></span>
-                {% else %}
-                    <span class="star glyphicon glyphicon-star-empty" data-id="{{plantel._id.nombre}}" aria-hidden="true"></span>
-                {% endif %}
-            {% endif %}
-        </div>
-        {% for jugador in plantel.jugadores %}
+           <img id="nombreEquipo" src="./images/Titulos/{{equipo.nombre}}.png">
+           <!-- Aca va el codigo del bloc de notas -->
+        </div> 
+        {% for jugador in equipo.plantel %}
             <!-- Informacion Jugadores -->
             <div class="media" id="plantel">
                 <div class="media-left media-middle">
                     <a>
-                        <img class="media-object" src="./images/{{plantel._id.nombre}}/Plantel/{{jugador.foto}}" alt ="Imagen No Disponible">
+                        <img class="media-object" src="./images/{{equipo.nombre}}/Plantel/{{jugador.foto}}" alt ="Imagen No Disponible">
                     </a>
                 </div>
                 <div class = "media-body">

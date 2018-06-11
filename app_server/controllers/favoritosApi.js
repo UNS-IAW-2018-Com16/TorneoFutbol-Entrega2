@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('../models/usuarios');
+require('../models/modelsTorneo');
 const Usuario = mongoose.model('Usuario');
 
 const agregarFavorito = function (req, res) {

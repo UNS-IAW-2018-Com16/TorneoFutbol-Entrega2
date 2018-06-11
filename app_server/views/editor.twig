@@ -3,27 +3,28 @@
 {% block body %}
 	<div>
 		<img id="logoEditor" src="./images/Titulos/editor.png">
-		{% for fecha in fechas %}
 			<div class="panel panel-info fixture">
 				<div class="panel-heading">
-					<p> Fecha {{ loop.index }} </p>
+					<p> Partidos </p>
 				</div>
 				<div class="panel-body">
-					{% for partido in fecha.partidos %}
-						<div class ="partidoFechaFixture">
-							{{ partido.equipoLocal }} - {{partido.equipoVisitante}}
-						</div>
+					{% for partido in partidos %}
+					<div class="partidoFechaFixture">
+						<p> {{partido.equipoLocal.nombre}} - {{partido.equipoVisitante.nombre}}</p>
+					</div>
+					<div>
 						{%  if partido.golesLocal == "" or partido.golesVisita == "" %}
 							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal"
-							href="#formulario" data-id="{{partido.ID}}">Cargar Informacion</button>
+							href="#formulario" data-id="{{partido._id}}">Cargar Informacion</button>
 						{% else %}
-							<p> Datos Cargados!</p>
-							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal" href="#formulario" data-id="{{partido.ID}}">Modificar Informacion</button>
+							<button type="button" class="btn btn-success" disabled="true"> Datos Cargados </button>
+							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal" href="#formulario" data-id="{{partido._id}}">Modificar Informacion</button>
 						{% endif %}
+					</div>
 					{% endfor %}
+
 				</div>
 			</div>
-		{% endfor %}
 	</div>
 	<div class="modal" id="formulario" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -60,11 +61,11 @@
 		        		<label for="amarillasJugadorVisita">Amarillas Equipo Visitante:</label>
 		        		<input type="text" class="form-control" placeholder="DNI Jugadores" name="amarillasJugadorVisita">
 		        	</div>
-		        	<small id="aclaracionDNI" class="form-text text-muted">Los numeros de DNI deben estar separados con guión medio. Ej: (12345643-34567895)</small> -->
+		        	<small id="aclaracionDNI" class="form-text text-muted">Los numeros de DNI deben estar separados con guión medio. Ej: (12345643-34567895)</small> 
 		        	<div class="form-group">
 			        	<label for="observaciones">Observaciones:</label>
 		        		<textarea class="form-control" id="observaciones" rows="3"></textarea>
-		        	</div>
+		        	</div>-->
 		        </form>
 		      </div>
 		      <div class="modal-footer">

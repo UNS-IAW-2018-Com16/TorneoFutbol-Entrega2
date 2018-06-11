@@ -14,7 +14,7 @@
 						{% if partido.golesLocal != null and partido.golesVisita != "" %}
 							<p>
 								<div class = "equipoResultado col-md-4">
-									{{ partido.equipoLocal }}
+									{{ partido.equipoLocal.nombre }}
 								</div>
 								<div class = "resultadoPartido">
 									<div class = "golesLocalResultado col-md-1">
@@ -25,7 +25,7 @@
 									</div>
 								</div>
 								<div class = "equipoResultado col-md-4">
-									{{ partido.equipoVisitante }}
+									{{ partido.equipoVisitante.nombre }}
 								</div>
 							</p>
 						{% endif %}

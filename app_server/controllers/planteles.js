@@ -1,16 +1,15 @@
 const mongoose = require('mongoose');
-require('../models/equipos');
-require('../models/planteles');
-const listaPlanteles = mongoose.model('Planteles');
+require('../models/modelsTorneo');
+const equipos = mongoose.model('Equipo');
 
 /* GET resultados page. */
 const planteles = function (req, res) { 
-  listaPlanteles.find().populate('_id').exec((err, planteles) => {
+  equipos.find().populate({ path:'plantel'}).exec((err, equipos) => {
       if (err) { 
         res.render('error', { error : err });    
       } else {
         res.render('equipos', {
-          planteles: planteles,
+          equipos: equipos,
           user: req.user
         });
       }
