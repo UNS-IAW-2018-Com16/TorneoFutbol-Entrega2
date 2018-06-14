@@ -83,8 +83,8 @@ const partidoSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Equipo'
   },
-  golesLocal: String,
-  golesVisita: String
+  golesLocal: Number,
+  golesVisita: Number
 }, {collection: "partidos"});
 
 const fechaSchema = new mongoose.Schema({

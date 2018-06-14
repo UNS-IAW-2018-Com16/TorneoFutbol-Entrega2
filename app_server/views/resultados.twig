@@ -11,7 +11,7 @@
 					</div>
 					<div class="panel-body">
 					{% for partido in fecha.partidos %}
-						{% if partido.golesLocal != null and partido.golesVisita != "" %}
+						{% if partido.golesLocal != null and partido.golesVisita != null %}
 							<p>
 								<div class = "equipoResultado col-md-4">
 									{{ partido.equipoLocal.nombre }}

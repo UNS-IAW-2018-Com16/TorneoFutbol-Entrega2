@@ -13,11 +13,10 @@
 						<p> {{partido.equipoLocal.nombre}} - {{partido.equipoVisitante.nombre}}</p>
 					</div>
 					<div>
-						{%  if partido.golesLocal == "" or partido.golesVisita == "" %}
-							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal"
+						{%  if partido.golesLocal == null or partido.golesVisita == null %}
+							<button type="button" class="btn btn-warning" id="modalButton" data-toggle="modal"
 							href="#formulario" data-id="{{partido._id}}">Cargar Informacion</button>
 						{% else %}
-							<button type="button" class="btn btn-success" disabled="true"> Datos Cargados </button>
 							<button type="button" class="btn btn-primary" id="modalButton" data-toggle="modal" href="#formulario" data-id="{{partido._id}}">Modificar Informacion</button>
 						{% endif %}
 					</div>

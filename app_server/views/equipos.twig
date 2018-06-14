@@ -1,23 +1,9 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-
-    <!-- Filtro Equipos -->
-    <!--<div class="dropdown" id="filtroEquipos">
-	    <button class="btn btn-default dropdown-toggle" type="button" id="botonEquipos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Equipos <span class="caret"></span>
-	    </button>
-	    <ul class="dropdown-menu" id="listaEquipos" aria-labelledby="dropdownMenu1">
-	    	{% for plantel in planteles %}
-	    		<li><a>{{ plantel._id.nombre }}</a></li>
-	    	{% endfor %}
-	    </ul>
-    </div>-->
-
     {% for equipo in equipos %}
-        <!-- Nombre del Equipo -->
         <div>
-           <img id="nombreEquipo" src="./images/Titulos/{{equipo.nombre}}.png">
-           <!-- Aca va el codigo del bloc de notas -->
+           <h1 id="tituloEquipos"><b>{{equipo.nombre}}</b></h1>
         </div> 
         {% for jugador in equipo.plantel %}
             <!-- Informacion Jugadores -->
@@ -91,4 +77,5 @@
     </div>
 
     <script src="javascripts/favoritos.js"></script>
+    <script src="javascripts/obtenerEquipo.js"></script>
 {% endblock %}

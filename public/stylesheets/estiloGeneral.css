@@ -264,3 +264,8 @@ iframe {
     text-shadow: 0 -1px 0 #082783;
     font: 12px Verdana, sans-serif;
 }
+
+#tituloEquipos {
+	color:black;
+	font-size: 50px;
+}

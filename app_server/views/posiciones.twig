@@ -3,29 +3,16 @@
 {% block body %}
 	<div>
 		<img id="logoPosiciones" src="../images/Titulos/posiciones.png" alt="Posiciones">
+
 		<table class="table table-hover table-bordered" id="tablaPosiciones">
 			<tr>
 				<th>Equipo</th>
-				<th>PJ</th>
-				<th>PG</th>
-				<th>PE</th>
-				<th>PP</th>
-				<th>GF</th>
-				<th>GC</th>
-				<th>DG</th>
 				<th>PTS</th>
 			</tr>
 			{% for equipo in tPosiciones %}
 				<tr>
 					<td>{{ equipo.equipo }}</td>
-					<td>{{ equipo.PJ }}</td>
-					<td>{{ equipo.PG }}</td>
-					<td>{{ equipo.PE }}</td>
-					<td>{{ equipo.PP }}</td>
-					<td>{{ equipo.GF }}</td>
-					<td>{{ equipo.GC }}</td>
-					<td>{{ equipo.DG }}</td>
-					<td>{{ equipo.PTS }}</td>
+					<td>{{ equipo.puntos }}</td>
 				</tr>
 			{% endfor %}
 		</table>
